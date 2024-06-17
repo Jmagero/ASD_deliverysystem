@@ -17,10 +17,23 @@ import java.util.NoSuchElementException;
 @RestControllerAdvice
 public class GlobalExceptionalHandler {
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<String> handleUserNotFoundException(NotFoundException ex) {
+    @ExceptionHandler(CustomerNotFoundException.class)
+    public ResponseEntity<String> handleCustomerNotFoundException(CustomerNotFoundException ex) {
              return  new ResponseEntity<>("Field does not exist", HttpStatus.NOT_FOUND);
     }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(DriverNotFoundException.class)
+    public ResponseEntity<String> handleDriverNotFoundException(DriverNotFoundException ex) {
+        return  new ResponseEntity<>("Field does not exist", HttpStatus.NOT_FOUND);
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(DeliveryNotFoundException.class)
+    public ResponseEntity<String> handleDeliveryNotFoundException(DeliveryNotFoundException ex) {
+        return  new ResponseEntity<>("Field does not exist", HttpStatus.NOT_FOUND);
+    }
+
     @ResponseStatus(HttpStatus.CONFLICT)
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<String> handleDataIntegrityViolationException(DataIntegrityViolationException ex) {
