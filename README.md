@@ -40,4 +40,4 @@ A Delivery Driver cannot be assigned more than 3 deliveries in any given week.
 ![](ERDiagram.png)
 
 **Architecture**
-![](Architecture.jpeg)
+![](architecture.jpeg)

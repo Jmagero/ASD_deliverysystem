@@ -2,7 +2,7 @@ services:
   mysql:
     image: 'mysql:latest'
     environment:
-      - 'MYSQL_DATABASE=studDB'
+      - 'MYSQL_DATABASE=deliveryDB'
       - 'MYSQL_PASSWORD=password'
       - 'MYSQL_ROOT_PASSWORD=password'
       - 'MYSQL_USER=myuser'
@@ -13,7 +13,7 @@ services:
   app:
     image: deliverysystem:1.0.0
     ports:
-      - '8085:8080'
+      - '8080:8080'
     environment:
       spring.datasource.url: jdbc:mysql://mysql:3306/deliveryDB
       spring.datasource.driverClassName: com.mysql.cj.jdbc.Driver
